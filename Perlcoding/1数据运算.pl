@@ -33,9 +33,9 @@ $what = 'steak';
 $var = "The name is ${what}s\n";print $var;
 $var = "The name is $whats\n";print $var;
 # 编码的转换 chr()、ord()
-$a = chr(0x03C9); print ("$a\n");
-$a = "\x{03C9}\x{03C9}"; print("$a\n");		#和上面一样，在没有预先创建变量时使用：\x{ }
-$var = ord($a); print("$var\n");
+#$a = chr(0x03C9); print ("$a\n");
+#$a = "\x{03C9}\x{03C9}"; print("$a\n");		#和上面一样，在没有预先创建变量时使用：\x{ }
+#$var = ord($a); print("$var\n");
 #字符串的比较：
 #	eq	=
 #	ne	!=
@@ -51,3 +51,25 @@ $var = undef;
 if($var == undef){
 	 print("1\n");
 }
+#获取数据输入
+$line = <STDIN>;
+if($line eq "\n"){	
+	print("That is a blank line\n");
+	}
+else{
+print("has contest input\n");
+}
+#去除末尾的换行符，返回值是实际移除的字符个数, !!不是去除空格
+chomp($test = <STDIN>); #若果有多个换行符只能去除一个，没有的话什么也不做。
+#未定义 undef
+#undef既不是数字也不是字符，是单独的一种数据格式
+#但是在数字语境中会认为是0，在字符语境中认为是空串
+$string.='more text' #string初始就被认为是undef,是空串
+#defined 判断字符串是否为空，用在读取文件在最后一行时通常是空，
+$string
+if(defined($string)){ #如果是空undef，返回值是假，不为空返回值是真
+	print("$string\n");
+	}
+else{
+	print("this is a blank\n");
+	}
